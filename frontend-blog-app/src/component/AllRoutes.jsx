@@ -1,10 +1,10 @@
 import {Route,Routes} from 'react-router-dom';
-import Login from './login';
+import Registration from './registration';
 export const AllRoutes = () => {
     return (
         <div>
             <Routes>
-                <Route path="/login" element={<Login/>} />
+                <Route path="/register" element={<Registration/>} />
             </Routes>
         </div>
     );
