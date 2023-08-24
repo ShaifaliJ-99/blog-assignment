@@ -1,12 +1,15 @@
 import { useState } from "react"
+import axios from 'axios';
 
 const Login=()=>{
 let [email,setemail]=useState("");
 let [name,setname]=useState("");
 let [pass,setPass]=useState("");
-const handleLogin = (e) =>{
+const handleLogin = async (e) =>{
     e.preventDefault();
     
+    const checkAxios = await axios.get("http://localhost:4500/");
+    console.log(checkAxios)
 console.log(email,name,pass)
 }
     return <div>
