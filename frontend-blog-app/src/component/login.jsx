@@ -8,7 +8,9 @@ let [pass,setPass]=useState("");
 const handleLogin = async (e) =>{
     e.preventDefault();
     
-    const checkAxios = await axios.get("http://localhost:4500/");
+    const checkAxios = await axios.post("http://localhost:4500/user/register",{
+        email,"user":name,"pass":pass
+    });
     console.log(checkAxios)
 console.log(email,name,pass)
 }
