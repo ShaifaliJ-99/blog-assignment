@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 //registration route
 userRouter.post("/register", async (req, res) => {
-    const { user, email, pass, location, age } = req.body
+    const { user, email, pass } = req.body
     try {
         const findIt = await UserModel.find({email});
         console.log(findIt);
@@ -13,7 +13,7 @@ userRouter.post("/register", async (req, res) => {
             res.status(409).send({"msg":"User already exists"})
         }else{
             bcrypt.hash(pass, 5, async (err, hash) => {
-                const userRegister = new UserModel({ user, email, pass: hash, location, age })
+                const userRegister = new UserModel({ user, email, pass: hash })
                 await userRegister.save();
                 res.status(200).send({ "msg": "registerion has been done" })
                 console.log(hash)
