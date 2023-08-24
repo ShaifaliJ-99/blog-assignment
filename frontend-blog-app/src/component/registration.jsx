@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Registration = () => {
     let [email, setemail] = useState("");
@@ -25,6 +26,9 @@ const Registration = () => {
             <input type="submit" value="SUBMIT" />
         </form>
 
+<div>
+    <Link to={'/'}>Go back Home</Link>
+</div>
     </div>
 }
 export default Registration;
